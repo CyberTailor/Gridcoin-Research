@@ -8,7 +8,7 @@
 #include <key_io.h>
 #include "rpc/server.h"
 #include "rpc/protocol.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "base58.h"
 
 #include <stdexcept>

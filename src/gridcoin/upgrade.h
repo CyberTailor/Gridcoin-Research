@@ -13,7 +13,7 @@
 #include <vector>
 
 #include "gridcoin/scraper/http.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 
 namespace GRC {
 

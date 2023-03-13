@@ -11,7 +11,7 @@
 #include "clientmodel.h"
 #include "researcher/researchermodel.h"
 #include "qt/mrcrequestpage.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 
 extern CWallet* pwalletMain;
 

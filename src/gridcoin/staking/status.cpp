@@ -4,7 +4,7 @@
 
 #include "gridcoin/staking/kernel.h"
 #include "gridcoin/staking/status.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 #include "wallet/wallet.h"
 

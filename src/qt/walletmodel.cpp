@@ -4,7 +4,7 @@
 #include "addresstablemodel.h"
 #include "transactiontablemodel.h"
 
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "wallet/wallet.h"
 #include "base58.h"
 #include "util.h"

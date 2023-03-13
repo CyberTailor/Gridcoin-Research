@@ -13,7 +13,7 @@
 #include "gridcoin/staking/difficulty.h"
 #include "gridcoin/staking/status.h"
 #include "gridcoin/superblock.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 
 #include <QDateTime>

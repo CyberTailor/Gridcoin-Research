@@ -6,7 +6,7 @@
 #include "amount.h"
 #include "init.h"
 #include "sync.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "base58.h"
 #include "server.h"
 #include "client.h"

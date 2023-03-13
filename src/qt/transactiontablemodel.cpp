@@ -8,7 +8,7 @@
 #include "addresstablemodel.h"
 #include "bitcoinunits.h"
 #include "wallet/wallet.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 
 #include <QLocale>

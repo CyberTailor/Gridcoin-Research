@@ -1,9 +1,9 @@
 // Copyright (c) 2010-2020 The Bitcoin Core developers
-// Copyright (c) 2014-2022 The Gridcoin developers
+// Copyright (c) 2014-2023 The Gridcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include <node/ui_interface.h>
+#include <node/client_ui_interface.h>
 
 #include <boost/signals2/optional_last_value.hpp>
 #include <boost/signals2/signal.hpp>

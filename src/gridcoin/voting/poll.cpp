@@ -6,7 +6,7 @@
 #include "gridcoin/support/xml.h"
 #include "gridcoin/voting/poll.h"
 #include "span.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 
 #include <boost/algorithm/string/join.hpp>

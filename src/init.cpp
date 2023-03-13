@@ -15,7 +15,7 @@
 #include "random.h"
 #include "rpc/server.h"
 #include "init.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "scheduler.h"
 #include "gridcoin/gridcoin.h"
 #include "gridcoin/upgrade.h"

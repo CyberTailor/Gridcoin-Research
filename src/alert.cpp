@@ -16,7 +16,7 @@
 #include "net.h"
 #include "streams.h"
 #include "sync.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "uint256.h"
 
 using namespace std;

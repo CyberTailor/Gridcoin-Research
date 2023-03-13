@@ -15,7 +15,7 @@
 #include "gridcoin/voting/payloads.h"
 #include "gridcoin/voting/registry.h"
 #include "node/blockstorage.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "wallet/wallet.h"
 #include <util/string.h>
 

@@ -5,7 +5,7 @@
 
 #include "init.h"
 #include "sync.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "protocol.h"
 #include "base58.h"
 #include "wallet/db.h"

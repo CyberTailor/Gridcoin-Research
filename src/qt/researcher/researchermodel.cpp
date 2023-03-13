@@ -11,7 +11,7 @@
 #include "gridcoin/quorum.h"
 #include "gridcoin/researcher.h"
 #include "gridcoin/scraper/scraper.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 
 #include "qt/bitcoinunits.h"
 #include "qt/guiutil.h"

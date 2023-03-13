@@ -7,7 +7,7 @@
 #include "dbwrapper.h"
 #include "net.h"
 #include "main.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 
 #include <stdint.h>

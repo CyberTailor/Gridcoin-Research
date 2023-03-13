@@ -19,7 +19,7 @@
 #include "qt/voting/votingmodel.h"
 #include "qt/walletmodel.h"
 #include "sync.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 
 #include <boost/signals2/signal.hpp>
 

@@ -15,7 +15,7 @@
 #include "gridcoin/support/xml.h"
 #include "gridcoin/tally.h"
 #include "span.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "util.h"
 
 #include <boost/algorithm/string/case_conv.hpp>

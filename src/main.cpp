@@ -14,7 +14,7 @@
 #include "checkpoints.h"
 #include "txdb.h"
 #include "init.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 #include "gridcoin/beacon.h"
 #include "gridcoin/claim.h"
 #include "gridcoin/mrc.h"

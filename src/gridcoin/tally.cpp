@@ -16,7 +16,7 @@
 #include "gridcoin/superblock.h"
 #include "gridcoin/tally.h"
 #include "util.h"
-#include "node/ui_interface.h"
+#include "node/client_ui_interface.h"
 
 #include <unordered_map>
 
