@@ -28,7 +28,7 @@ if(MINGW)
 endif()
 
 file(MAKE_DIRECTORY ${LIBDB_BUILD_DIR})
-execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/dist/configure -C ${BDB_FLAGS}
+execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/dist/configure ${BDB_FLAGS}
     WORKING_DIRECTORY ${LIBDB_BUILD_DIR}
     COMMAND_ERROR_IS_FATAL ANY
 )
