@@ -6,7 +6,7 @@
 #
 # CMake support is experimental. Use with caution and report any bugs.
 
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.18)
 
 project("Gridcoin"
     VERSION 5.4.3.1

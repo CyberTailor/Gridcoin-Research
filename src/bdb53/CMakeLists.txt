@@ -28,10 +28,21 @@ if(MINGW)
 endif()
 
 file(MAKE_DIRECTORY ${LIBDB_BUILD_DIR})
-execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/dist/configure ${BDB_FLAGS}
-    WORKING_DIRECTORY ${LIBDB_BUILD_DIR}
-    COMMAND_ERROR_IS_FATAL ANY
-)
+
+if(CMAKE_VERSION VERSION_LESS 3.19)
+    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/dist/configure ${BDB_FLAGS}
+        WORKING_DIRECTORY ${LIBDB_BUILD_DIR}
+        RESULT_VARIABLE configure_status
+    )
+    if(NOT configure_status EQUAL 0)
+        message(FATAL_ERROR "BerkeleyDB configure failed")
+    endif()
+else()
+    execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/dist/configure ${BDB_FLAGS}
+        WORKING_DIRECTORY ${LIBDB_BUILD_DIR}
+        COMMAND_ERROR_IS_FATAL ANY
+    )
+endif()
 
 
 # Make
