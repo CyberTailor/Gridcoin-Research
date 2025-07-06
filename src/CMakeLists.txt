@@ -242,10 +242,6 @@ if(ENABLE_UPNP)
         target_compile_definitions(gridcoin_util PRIVATE USE_UPNP=0)
     endif()
 
-    if(WIN32)
-        target_compile_definitions(gridcoin_util PRIVATE MINIUPNP_STATICLIB)
-    endif()
-
     target_link_libraries(gridcoin_util PUBLIC PkgConfig::MINIUPNPC)
 endif()
 

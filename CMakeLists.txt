@@ -121,6 +121,12 @@ option(BUNDLED_QT5      "Use the bundled version of Qt 5" ${HUNTER_ENABLED})
 # Handle dependencies
 # ===================
 
+set(Boost_USE_STATIC_LIBS ${STATIC_LIBS})
+set(Boost_USE_STATIC_RUNTIME ${STATIC_RUNTIME})
+set(CURL_USE_STATIC_LIBS ${STATIC_LIBS})
+set(MINIUPNPC_USE_STATIC_LIBS ${STATIC_LIBS})
+set(OPENSSL_USE_STATIC_LIBS ${STATIC_LIBS})
+
 set(QT5_MINIMUM_VERSION 5.9.5)
 set(QT6_MINIMUM_VERSION 6.2.0)
 set(QT_COMPONENTS Core Concurrent Gui LinguistTools Network Widgets)
@@ -366,6 +372,7 @@ check_symbol_exists(KERN_ARND "sys/sysctl.h" "sys/types.h" HAVE_SYSCTL_ARND)
 
 check_symbol_exists(O_CLOEXEC "fcntl.h" HAVE_O_CLOEXEC)
 check_symbol_exists(getauxval "sys/auxv.h" HAVE_STRONG_GETAUXVAL)
+
 
 # Descend into subdirectories
 # ===========================
