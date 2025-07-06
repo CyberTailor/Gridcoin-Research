@@ -299,6 +299,7 @@ define $(package)_config_cmds
   $(MAKE) -C qtbase sub-src-clean && \
   qtbase/bin/qmake -o qttranslations/Makefile qttranslations/qttranslations.pro && \
   qtbase/bin/qmake -o qttranslations/translations/Makefile qttranslations/translations/translations.pro && \
+  qtbase/bin/qmake -o qttools/src/linguist/Makefile qttools/src/linguist/linguist.pro && \
   qtbase/bin/qmake -o qttools/src/linguist/lrelease/Makefile qttools/src/linguist/lrelease/lrelease.pro && \
   qtbase/bin/qmake -o qttools/src/linguist/lupdate/Makefile qttools/src/linguist/lupdate/lupdate.pro && \
   qtbase/bin/qmake -o qttools/src/linguist/lconvert/Makefile qttools/src/linguist/lconvert/lconvert.pro && \
@@ -318,7 +319,11 @@ endef
 
 define $(package)_stage_cmds
   sh -c ' \
+    mkdir -p $($(package)_staging_dir)$(build_prefix)/bin && \
+    cp qtbase/bin/qmake $($(package)_staging_dir)$(build_prefix)/bin && \
+    $(MAKE) -C qtbase INSTALL_ROOT=$($(package)_staging_dir) install_mkspecs && \
     $(MAKE) -C qtbase/src INSTALL_ROOT=$($(package)_staging_dir) $(addsuffix -install_subtargets,$(addprefix sub-,$($(package)_qt_libs))) && \
+    $(MAKE) -C qttools/src/linguist INSTALL_ROOT=$($(package)_staging_dir) install_cmake_linguist_tools_files && \
     $(MAKE) -C qttools/src/linguist/lrelease INSTALL_ROOT=$($(package)_staging_dir) install_target && \
     $(MAKE) -C qttools/src/linguist/lupdate INSTALL_ROOT=$($(package)_staging_dir) install_target && \
     $(MAKE) -C qttools/src/linguist/lconvert INSTALL_ROOT=$($(package)_staging_dir) install_target && \
@@ -328,6 +333,6 @@ define $(package)_stage_cmds
 endef
 
 define $(package)_postprocess_cmds
-  rm -rf native/mkspecs/ native/lib/ lib/cmake/ && \
+  rm -rf native/mkspecs/modules/ native/lib/ && \
   rm -f lib/lib*.la lib/*.prl plugins/*/*.prl
 endef
