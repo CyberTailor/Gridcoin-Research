@@ -69,11 +69,23 @@ include(CheckIncludeFile)
 include(CheckPIESupported)
 include(CheckSymbolExists)
 
-include(CheckSSE)
 include(CheckStrerrorR)
 include(FindPkgConfig)
 include(HunterGate)
 include(VersionFromGit)
+
+
+# Check for CPU features
+# ======================
+
+if(NOT CMAKE_CROSSCOMPILING)
+    include(CheckSSE)
+else()
+    set(HAS_SSE41 OFF)
+    set(HAS_AVX2 OFF)
+    set(ENABLE_X86_SHANI OFF)
+    set(ENABLE_ARM_SHANI OFF)
+endif()
 
 
 # Define options
