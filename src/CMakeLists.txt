@@ -242,7 +242,7 @@ if(ENABLE_UPNP)
         target_compile_definitions(gridcoin_util PRIVATE USE_UPNP=0)
     endif()
 
-    target_link_libraries(gridcoin_util PUBLIC PkgConfig::MINIUPNPC)
+    target_link_libraries(gridcoin_util PUBLIC ${LIBMINIUPNPC})
 endif()
 
 
