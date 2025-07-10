@@ -6,6 +6,7 @@ $(package)_file_name=qtbase-$($(package)_suffix)
 $(package)_sha256_hash=0c42c799aa7c89e479a07c451bf5a301e291266ba789e81afc18f95049524edc
 $(package)_linux_dependencies=freetype fontconfig libxcb libxkbcommon libxcb_util libxcb_util_render libxcb_util_keysyms libxcb_util_image libxcb_util_wm
 $(package)_qt_libs=corelib network widgets gui plugins testlib concurrent
+$(package)_qt_libs_mingw32=winmain
 $(package)_patches = fix_qt_pkgconfig.patch
 $(package)_patches += mac-qmake.conf
 $(package)_patches += no-xlib.patch
@@ -308,7 +309,7 @@ endef
 
 define $(package)_build_cmds
   sh -c ' \
-    $(MAKE) -C qtbase/src $(addprefix sub-,$($(package)_qt_libs)) && \
+    $(MAKE) -C qtbase/src $(addprefix sub-,$($(package)_qt_libs) $($(package)_qt_libs_$(host_os))) && \
     $(MAKE) -C qttools/src/linguist/lrelease && \
     $(MAKE) -C qttools/src/linguist/lupdate && \
     $(MAKE) -C qttools/src/linguist/lconvert && \
@@ -322,7 +323,7 @@ define $(package)_stage_cmds
     mkdir -p $($(package)_staging_dir)$(build_prefix)/bin && \
     cp qtbase/bin/qmake $($(package)_staging_dir)$(build_prefix)/bin && \
     $(MAKE) -C qtbase INSTALL_ROOT=$($(package)_staging_dir) install_mkspecs && \
-    $(MAKE) -C qtbase/src INSTALL_ROOT=$($(package)_staging_dir) $(addsuffix -install_subtargets,$(addprefix sub-,$($(package)_qt_libs))) && \
+    $(MAKE) -C qtbase/src INSTALL_ROOT=$($(package)_staging_dir) $(addsuffix -install_subtargets,$(addprefix sub-,$($(package)_qt_libs) $($(package)_qt_libs_$(host_os)))) && \
     $(MAKE) -C qttools/src/linguist INSTALL_ROOT=$($(package)_staging_dir) install_cmake_linguist_tools_files && \
     $(MAKE) -C qttools/src/linguist/lrelease INSTALL_ROOT=$($(package)_staging_dir) install_target && \
     $(MAKE) -C qttools/src/linguist/lupdate INSTALL_ROOT=$($(package)_staging_dir) install_target && \
